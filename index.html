@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrendMart Product Explorer</title>
+
+  <!-- Link to compiled Tailwind CSS -->
+  <link rel="stylesheet" href="styles/output.css">
+
+  <!-- Font Awesome (icons) -->
+  <script src="https://kit.fontawesome.com/a2d8b6f8f3.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+  <!-- HEADER -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-store text-indigo-600 text-xl"></i>
+        <h1 class="text-2xl font-bold text-indigo-600">TrendMart</h1>
+      </div>
+      <nav class="hidden md:flex gap-4 text-sm">
+        <a href="#" class="hover:text-indigo-600"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#" class="hover:text-indigo-600"><i class="fa-solid fa-tag"></i> Offers</a>
+        <a href="#" class="hover:text-indigo-600"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+      <div class="flex gap-2">
+        <button id="detect-browser" class="px-3 py-1 bg-indigo-600 text-white rounded text-sm hover:bg-indigo-700">Browser</button>
+        <button id="detect-location" class="px-3 py-1 border rounded text-sm hover:bg-slate-100">Location</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-white rounded-xl shadow mt-6 max-w-6xl mx-auto p-6">
+    <div class="h-44 rounded-lg bg-cover bg-center flex items-end p-4 mb-6 hero-image">
+      <h2 class="bg-white/80 px-3 py-1 rounded text-slate-800 font-semibold">Trending Products & Gadgets</h2>
+    </div>
+
+    <!-- INTRO VIDEO + AUDIO -->
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <iframe class="w-full h-64 rounded" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="TrendMart Intro" allowfullscreen></iframe>
+      </div>
+      <div class="space-y-3">
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser doesn’t support audio.
+        </audio>
+        <p class="text-sm text-slate-500">
+          <strong>Browser:</strong> <span id="detected-browser">Unknown</span><br>
+          <strong>Location:</strong> <span id="detected-location">Not detected</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="flex gap-2 mb-6">
+      <input id="search-input" type="text" placeholder="Search products by title…" 
+             class="flex-1 border rounded px-3 py-2">
+      <button id="search-button" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Search</button>
+      <button id="reset-button" class="px-4 py-2 border rounded hover:bg-slate-100">Reset</button>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="col-span-full text-slate-500" id="products-loading">Loading products…</div>
+    </div>
+
+    <!-- INTEREST FORM -->
+    <form id="interest-form" class="bg-slate-50 mt-8 p-4 rounded space-y-3">
+      <h3 class="font-semibold">Interested in a product?</h3>
+      <div class="grid md:grid-cols-2 gap-2">
+        <input id="name" required placeholder="Your Name" class="border p-2 rounded">
+        <input id="email" required type="email" placeholder="Email" class="border p-2 rounded">
+      </div>
+      <textarea id="message" rows="3" placeholder="Which product caught your eye?" 
+                class="border p-2 rounded w-full"></textarea>
+      <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Submit Interest</button>
+      <div id="interest-feedback" class="text-sm text-slate-600"></div>
+    </form>
+  </section>
+
+  <footer class="text-center text-sm text-slate-500 mt-10 mb-6">
+    © 2025 TrendMart — Demo for MAI-OL-423-1 (Full Stack Development)
+  </footer>
+
+  <!-- Link to your JS -->
+  <script src="script.js"></script>
+</body>
+</html>
